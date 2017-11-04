@@ -1,0 +1,20 @@
+{
+  "users": {
+    "h5sBmJSIERefjMO0CGwsJYgo2Yq2": {
+      "drinkers": {
+        "bart": {
+          "id": "String",
+          "name": "guido",
+          "photo": "String",
+          "selected": true
+        }
+      },
+      "post": {
+        "-Kx4u0SBIspTa2jRdV3L": {
+          "description": "Ook een ;ooie geste",
+          "title": "Testing"
+        }
+      }
+    }
+  }
+}
