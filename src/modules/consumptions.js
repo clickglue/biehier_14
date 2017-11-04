@@ -26,18 +26,14 @@ export const fetchConsumptionData = () => {
 
 export const registerConsumption = (id, item) => {
     const { currentUser } = firebase.auth();
-    console.log('currentUser: ', currentUser);
     return (dispatch) => {
         dispatch({ type: CONSUMPTION_REGISTER_REQUEST });
-        firebase.database().ref(`/users/${currentUser.uid}/consumptions`)
-            .set({
-                id,
-                item
-            })
-            .then(console.log('data written'))
-            .catch((error) => {
-                dispatch({ type: CONSUMPTION_REGISTER_FAIL, payload: error })
-            })
+        const key=firebase.database().ref(`/users/${currentUser.uid}/consumptions`).push().key
+        firebase.database().ref(`/users/${currentUser.uid}/consumptions/${key}`).update({
+            id,
+            item
+        })
+        Actions.pop()
     }
 }
 //define reducer
