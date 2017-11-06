@@ -1,8 +1,7 @@
 import { Actions } from 'react-native-router-flux';
 import firebase from 'firebase';
-import _ from 'lodash';
 
-//defin constants
+//define constants
 export const CONSUMPTION_LIST_REQUEST = 'CONSUMPTION_LIST_REQUEST';
 export const CONSUMPTION_LIST_SUCCESS = 'CONSUMPTION_LIST_SUCCESS';
 export const CONSUMPTION_LIST_FAIL = 'CONSUMPTION_LIST_FAIL';
@@ -31,9 +30,15 @@ export const registerConsumption = (id, item) => {
         const key=firebase.database().ref(`/users/${currentUser.uid}/consumptions`).push().key
         firebase.database().ref(`/users/${currentUser.uid}/consumptions/${key}`).update({
             id,
-            item
+            item,
+            createdAt: firebase.database.ServerValue.TIMESTAMP
+        }).then(()=>{
+            dispatch({type: CONSUMPTION_REGISTER_SUCCESS})
+            Actions.pop()
+        }).catch((error)=>{
+            dispatch({type:CONSUMPTION_REGISTER_FAIL})
         })
-        Actions.pop()
+        
     }
 }
 //define reducer

@@ -3519,6 +3519,12 @@ react-native-tab-view@^0.0.70:
   dependencies:
     prop-types "^15.5.10"
 
+react-native-tableview-simple@^0.17.1:
+  version "0.17.1"
+  resolved "https://registry.yarnpkg.com/react-native-tableview-simple/-/react-native-tableview-simple-0.17.1.tgz#d27c0a6b454052e6ac265e7ed16733e00bafeed1"
+  dependencies:
+    prop-types "^15.6.0"
+
 react-native@0.50.1:
   version "0.50.1"
   resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.50.1.tgz#3d8bb7c96dd3151788e795a22155d305f15abfd1"

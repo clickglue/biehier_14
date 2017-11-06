@@ -38,7 +38,6 @@ class Consumptions extends Component {
                         icon={item.icon}
                         price={item.price}
                         touchHandler={()=>this.props.registerConsumption(this.props.id,item)}
-                    //context={'selectScreen'} 
                     />}
                     enableEmptySections={true}
                 />

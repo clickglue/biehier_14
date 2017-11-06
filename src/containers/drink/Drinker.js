@@ -31,7 +31,7 @@ class Drinker extends Component {
                 <View style={styles.container}>
                     <Image style={styles.image} source={{ uri: this.props.foto }} />
                     {this.selected(this.props.selected)}
-                    <Text style={styles.text} >{this.props.naam}</Text>
+                    <Text style={styles.textStyle} >{this.props.naam}</Text>
                 </View>
             </TouchableOpacity >
         );
@@ -41,16 +41,21 @@ class Drinker extends Component {
 // define your styles
 const styles = StyleSheet.create({
     container: {
+        flex:1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#2c3e50',
+        //backgroundColor: '#2c3e50',
         margin: 3,
     },
-    text: {
+    textStyle: {
+        alignSelf: 'flex-start',
         position: 'absolute',
-        marginTop: 10,
-        marginLeft: 10,
+        width:120,
+        top: 10,
+        left: 10,
         color: '#fff',
+        fontWeight:'800',
+        backgroundColor:'#0009'
     },
     image: {
         width: 150,

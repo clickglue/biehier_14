@@ -27,6 +27,7 @@ class Drink extends Component {
                     <Spinner />
                     :
                     <FlatList
+                        numColumns={2}
                         data={this.itemsSelected()}
                         keyExtractor={this.keyExtractor}
                         renderItem={({ item }) => <Drinker

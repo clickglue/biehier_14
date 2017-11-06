@@ -21,6 +21,8 @@ class SelectDrinkers extends Component {
         this.props.toggleSelected(newDrinkersList)
     }
 
+    keyExtractor=(item,index)=>item.id
+
     render() {
         return (
             <View style={styles.container}>
@@ -29,7 +31,9 @@ class SelectDrinkers extends Component {
                     <Spinner />
                     :
                     <FlatList
+                        numColumns={2}
                         data={this.props.items}
+                        keyExtractor={this.keyExtractor}
                         renderItem={({ item }) => <Drinker
                             id={item.id}
                             key={item.id}
